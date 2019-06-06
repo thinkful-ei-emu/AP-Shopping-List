@@ -21,12 +21,12 @@ $(function(){
   $('.shopping-item-toggle').click(function(){
 
     console.log($(this));
-    console.log($(this.parent().parent()));
-    $(this.closest('.shopping-item').toggleClass('shopping-item__checked'));
+    console.log($(this).closest('li').find('.shopping-item'));
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
   });
 
   $('.shopping-item-delete').click(function() {
-    this.remove();
+    this.closest('li').remove();
   });
 });
 
