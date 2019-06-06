@@ -6,20 +6,13 @@
 
 $(function() {
 
-    const item = $("#shopping-list-entry");
-
-    $("[type = 'submit']").click(function(item){
-       $('ul').append(
-           '<li>' + <span class="shopping-item">item</span>
-           <div class="shopping-item-controls">
-             <button class="shopping-item-toggle">
-               <span class="button-label">check</span>
-             </button>
-             <button class="shopping-item-delete">
-               <span class="button-label">delete</span>
-             </button>
-           </div> +
-             '</li>'
+    $("#js-shopping-list-form").on('submit', function(event){
+      console.log();
+      event.preventDefault();
+      const foodItem = $( 'input' ).val();
+      console.log(foodItem);
+       $('.shopping-list').append(
+        `<li><span class="shopping-item">${foodItem}</span><div class="shopping-item-controls"><button class="shopping-item-toggle"><span class="button-label">check</span></button><button class="shopping-item-delete"><span class="button-label">delete</span></button></div></li>`
        );
     });
 });
